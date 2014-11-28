@@ -9,7 +9,135 @@
 </head>
 <body>
 
-<a href="www.irfanview.com">irfanview</a>
+
 
 </body>
 </html>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="GENERATOR" content="IrfanView">
+
+<title>WaterShimmer</title>
+
+<style>
+
+body{
+margin:0px;
+}
+
+#PicFrame{
+margin-left:0px;
+position:absolute;
+background: url(https://lh4.googleusercontent.com/-BBRYp-WaiBU/VHh-olmxETI/AAAAAAAAAik/RMYHfM25fPc/s328-p/Pebbles.jpg) no-repeat;
+width:220px;
+height:220px;
+z-index:1;
+}
+
+#WaterRipple{
+margin-left:0px;
+position:absolute;
+width:220px;
+height:220px;
+opacity:0.7;
+z-index:10;
+}
+
+
+</style>
+
+<script language="JavaScript">
+
+
+// Duration of image (in milliseconds)
+var slideShowSpeed = 50
+
+// Duration of crossfade (in seconds)
+var crossFadeDuration = 0
+
+var Pic = new Array()
+
+Pic[0] = 'https://lh6.googleusercontent.com/-TtKQ95FQ8opecRshSLIKkKdHqwbV1Pq67hRyi0-lOw=s199-p-no';
+
+Pic[1] = 'https://lh5.googleusercontent.com/IPlI2qTZM5vT7BGXazDwUoXqY3QCOKZRIMTFq2YRkeM=w200-h199-p-no';
+
+Pic[2] = 'https://lh6.googleusercontent.com/bt8iGgQ51W8a3XGBkF5KP8hSAO5ReyZAPwxyrq_Mw-Y=w200-h199-p-no';
+
+Pic[3] = 'https://lh4.googleusercontent.com/GYOxjqcCQgJi351xveTahY6UMxCwulC4LqRFiDiGTcg=w200-h199-p-no';
+
+Pic[4] = 'https://lh3.googleusercontent.com/N9u4fXXri-ROCfifxXtRbs59fcBUsg9jqhdLl6OjbZw=s219-p-no';
+
+Pic[5] = 'https://lh5.googleusercontent.com/18TvIp1AFLei5bNpJHingl1UCgrmRQkJvWhGvDdJwYA=s219-p-no';
+
+Pic[6] = 'https://lh5.googleusercontent.com/SiVVyf1reThBuTV0j46mrQlfKDw_XEEgkfFmX7laNx4=s219-p-no';
+
+Pic[7] = 'https://lh6.googleusercontent.com/SCkhnVW1tA965uO_Un5IKdtcFUwM5rGtRS3soufdkiA=w220-h219-p-no';
+
+Pic[8] = 'https://lh5.googleusercontent.com/__yUC1O_IYSspBH70IOx0du5PVHpBZTJ7f-v_mKxiYg=w220-h219-p-no';
+
+Pic[9] = 'https://lh6.googleusercontent.com/oaOTXKG5A2dh6_MGlgO3NtCsn5P63erwoZcCbjIGuDI=s207-p-no';
+
+Pic[10] = 'https://lh5.googleusercontent.com/y_UqQD7TZhUZrEwSU3PkpukDJXsw0KCYq8uKutbi6Zs=s207-p-no';
+
+var PicText = new Array()
+
+
+var t
+var j = 0
+var p = Pic.length
+var preLoad = new Array()
+
+for (i = 0; i < p; i++)
+{
+   preLoad[i] = new Image()
+   preLoad[i].src = Pic[i]
+}
+
+function runSlideShow(){
+   if (document.all && document.images.SlideShow.filters){
+      document.images.SlideShow.style.filter="blendTrans(duration=0)"
+      document.images.SlideShow.style.filter="blendTrans(duration=crossFadeDuration)"
+      document.images.SlideShow.filters.blendTrans.Apply()      
+   }
+   document.images.SlideShow.src = preLoad[j].src
+   document.getElementById("ImageText").firstChild.nodeValue = PicText[j];
+   if (document.all && document.images.SlideShow.filters){
+      document.images.SlideShow.filters.blendTrans.Play()
+   }
+   j = j + 1
+   if (j > (p-1)) j=0
+   t = setTimeout('runSlideShow()', slideShowSpeed)
+}
+
+</script>
+
+</head>
+
+<!--body bgcolor="Lightblue"-->
+
+<body onload="runSlideShow()">
+
+<div id="PicFrame">
+
+<div id="WaterRipple">
+
+<img src="https://lh5.googleusercontent.com/IPlI2qTZM5vT7BGXazDwUoXqY3QCOKZRIMTFq2YRkeM=w200-h199-p-no" , width="220" name="SlideShow">
+
+</div>
+
+</div>
+
+<div id="ImageText">undefined</div>
+
+<a href="www.irfanview.com">irfanview</a>
+
+</body>
+	
+</html>
+
